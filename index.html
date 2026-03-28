@@ -1,0 +1,464 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --orange: #F26522;
+    --orange-light: #FEF0E8;
+    --navy: #0D1F3C;
+    --white: #FFFFFF;
+    --off-white: #F9F9F9;
+    --text-body: #2C2C2C;
+    --text-muted: #6B6B6B;
+    --border: #E8E8E8;
+  }
+
+  .logo-img {
+    height: 52px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(27, 79, 204, .12));
+    margin: 0 auto;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    font-family: var(--font-sans);
+    color: var(--text-body);
+  }
+
+  .header {
+    background: var(--navy);
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .logo-dot {
+    color: var(--orange);
+  }
+
+  .logo-tag {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 3px;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.9;
+  }
+
+  .header-meta strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .hero {
+    background: var(--white);
+    padding: 2.5rem 2.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--orange-light);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 span {
+    color: var(--orange);
+  }
+
+  .hero p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 560px;
+    margin-top: 0.5rem;
+  }
+
+  .body {
+    padding: 0 2.5rem 2rem;
+    background: var(--white);
+  }
+
+  .section {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.4rem;
+  }
+
+  .ipx-tagline {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+
+  .ipx-tagline-sub {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--orange);
+    margin-bottom: 0.9rem;
+  }
+
+  .ipx-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .ipx-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ipx-box {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+  }
+
+  .ipx-box-num {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+
+  .ipx-box h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+
+  .ipx-box p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .ipx-closing {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.75;
+    margin-top: 1.1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--navy);
+    border-radius: 10px;
+  }
+
+  .ipx-closing span {
+    color: var(--orange);
+    font-weight: 500;
+  }
+
+  .casestudy {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin-top: 1rem;
+  }
+
+  .casestudy p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .casestudy .cite {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.75rem;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .casestudy .cite::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--orange);
+  }
+
+  .impact-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 0.9rem;
+    line-height: 1.7;
+    padding-left: 1rem;
+    border-left: 2px solid var(--orange);
+  }
+
+  .pricing-box {
+    margin-top: 1rem;
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+  }
+
+  .price-amount {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .price-note {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 5px;
+  }
+
+  .price-includes div:first-child {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 6px;
+    text-align: right;
+  }
+
+  .price-includes ul {
+    list-style: none;
+  }
+
+  .price-includes ul li {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .price-includes ul li::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  .footer {
+    background: var(--off-white);
+    border-top: 1px solid var(--border);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .footer .orange {
+    color: var(--orange);
+    font-weight: 500;
+  }
+
+  .print-btn {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 11px 32px;
+    font-size: 14px;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  .print-btn:hover {
+    background: #d9561a;
+  }
+
+  @media print {
+    .print-btn {
+      display: none;
+    }
+  }
+</style>
+
+<div class="page">
+
+  <div class="header">
+    <div>
+      <img class="logo-img" src="Betterside Logo 1.png" alt="BetterSide Logo">
+      <div class="logo-tag">Real estate technology solutions</div>
+    </div>
+    <div class="header-meta">
+      Prepared for: <strong>AGI Infra</strong><br>
+      Project: Majestic High Rise, Ludhiana<br>
+      Date: March 28, 2026<br>
+      Valid for: 30 days
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="badge"><span class="badge-dot"></span>IPX Proposal</div>
+    <div class="hero-sub">For Majestic High Rise by AGI Infra</div>
+    <h1>IPX<br><span>Proposal</span></h1>
+    <p>An immersive digital experience that lets your buyers explore, discover, and fall in love with Majestic — from
+      anywhere in the world, at any time of day.</p>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-label">What is IPX</div>
+      <div class="ipx-tagline">Not a brochure.</div>
+      <div class="ipx-tagline-sub">An experience.</div>
+      <div class="ipx-desc">IPX — Immersive Property Experience — is a complete digital showcase of your project. It is
+        the difference between a buyer reading about Majestic and a buyer feeling like they are already there.</div>
+
+      <div class="ipx-grid">
+        <div class="ipx-box">
+          <div class="ipx-box-num">01</div>
+          <h3>Explore from anywhere in the world</h3>
+          <p>Buyers in Ludhiana, Delhi, London, or Dubai can walk through Majestic without stepping foot on site.
+            Geography is no longer a barrier to conviction.</p>
+        </div>
+        <div class="ipx-box">
+          <div class="ipx-box-num">02</div>
+          <h3>Always on, always available</h3>
+          <p>IPX works 24/7. While your sales team rests, IPX keeps presenting — every after-hours inquiry is a buyer
+            who chose themselves.</p>
+        </div>
+        <div class="ipx-box">
+          <div class="ipx-box-num">03</div>
+          <h3>A lead generation engine</h3>
+          <p>Every interaction is tracked — floor plans viewed, amenities revisited, time spent. Real intelligence your
+            sales team can act on immediately.</p>
+        </div>
+        <div class="ipx-box">
+          <div class="ipx-box-num">04</div>
+          <h3>Built for SEO and performance marketing</h3>
+          <p>A searchable, high-performance digital asset — the most powerful landing destination for every Google and
+            Meta campaign you run.</p>
+        </div>
+      </div>
+
+      <div class="ipx-closing">IPX turns Majestic High Rise into a destination that buyers visit <span>before they
+          visit</span> — building certainty, desire, and momentum long before the first site walk.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Real-world impact — a case study</div>
+      <div class="casestudy">
+        <p>"A family from Bathinda was interested in Majestic but couldn't travel to Ludhiana. Through IPX, they
+          explored every floor, walked through the amenities, and reviewed apartment layouts — together, from their
+          living room TV. By the time they visited, they had already chosen their unit. The deal closed in a single
+          meeting."</p>
+        <div class="cite">Illustrative buyer journey, Ludhiana residential project</div>
+      </div>
+      <p class="impact-note">When buyers arrive pre-informed, your sales effort drops and your closing speed goes up.
+        IPX doesn't just generate leads — it generates intent.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Investment</div>
+      <div class="pricing-box">
+        <div>
+          <div class="price-label">IPX for Majestic High Rise</div>
+          <div class="price-amount">₹11,00,000</div>
+          <div class="price-note">One-time project fee · Delivery in 3 weeks</div>
+        </div>
+        <div class="price-includes">
+          <div>Inclusive of</div>
+          <ul>
+            <li>Platform setup</li>
+            <li>Inbuilt lead CRM</li>
+            <li>SEO configuration</li>
+            <li>Campaign tracking</li>
+            <li>Launch support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p><span class="orange">Betterside</span> · bettersidde.github.io</p>
+    <p>Prepared for AGI Infra, Ludhiana · Confidential</p>
+  </div>
+
+</div>
